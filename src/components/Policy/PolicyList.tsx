@@ -10,15 +10,16 @@ const PolicyList = (props: {
   }[]
   search: string
 }) => {
+  const searchFilter = props.items.filter(
+    ({ personName, policyno }) =>
+      personName.toUpperCase().startsWith(props.search.toUpperCase()) ||
+      policyno.startsWith(props.search)
+  )
+  const isResult = Boolean(searchFilter.length)
   return (
     <div className="card">
-      {props.items
-        .filter(
-          ({ personName, policyno }) =>
-            personName.startsWith(props.search) ||
-            policyno.startsWith(props.search)
-        )
-        .map((filteredPolicy) => (
+      {isResult ? (
+        searchFilter.map((filteredPolicy) => (
           <PolicyItem
             key={Math.random() * 100}
             personName={filteredPolicy.personName}
@@ -26,7 +27,10 @@ const PolicyList = (props: {
             email={filteredPolicy.email}
             policyno={filteredPolicy.policyno}
           />
-        ))}
+        ))
+      ) : (
+        <h2 className="error-message">Policy is not found!</h2>
+      )}
     </div>
   )
 }
