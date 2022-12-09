@@ -1,6 +1,6 @@
 {
   "name": "sb-exercise",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "description": "An assignment",
   "main": "index.js",
   "scripts": {
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/legendh/share-notes.git"
+    "url": "git+https://github.com/legendh/sb-ex.git"
   },
   "author": "Hakan Ergoksen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/legendh/share-notes/issues"
+    "url": "https://github.com/legendh/sb-ex/issues"
   },
-  "homepage": "https://github.com/legendh/share-notes#readme",
+  "homepage": "https://github.com/legendh/sb-ex#readme",
   "dependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
     "react": "^17.0.2",
