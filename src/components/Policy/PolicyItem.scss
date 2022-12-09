@@ -1,0 +1,74 @@
+@import '../../assets/styles/utilities/responsive.scss';
+
+.card > .policy-item-container:nth-child(2n), .policy-item-container:nth-child(2n)>* {
+    background: #e8e8e8;
+}
+.policy-item-container{
+        display: grid;
+        grid-template-columns: 160px minmax(min-content, 320px);
+        grid-template-areas: 
+        'name name name name' 
+        'phone mail policyno policyno';      
+        gap: 15px 10px;
+        padding: 20px 25px;
+        @include respond-below(sm){
+            grid-template-columns: minmax(min-content, 320px);
+            grid-template-areas: 
+            'name'
+            'phone'
+            'mail'
+            'policyno'
+            ;
+        }
+        div{
+            background-color: rgba(255, 255, 255, 0.8);                        
+        }
+        .policy-item-container--person-name{
+            font-size: 1.5rem;
+            grid-area: name;            
+        }
+
+        .policy-item-container--phone{            
+            grid-area: phone;            
+            &::before{
+                content: '';            
+                background: url(../../assets/img/icon-phone.svg) no-repeat center center;
+                background-size: 100% auto;
+                width: 15px;
+                height: 15px;
+                margin-right: 5px ;
+                display: inline-block;
+            }
+            a{
+                display: inline-block;
+                text-decoration: none;
+                color:inherit
+            }
+        }
+
+        .policy-item-container--mail{            
+            grid-area: mail;            
+            &::before{
+                content: '@';
+                margin-right: 5px ;
+            }
+            a{                
+                text-decoration: none;
+                color:inherit
+            }
+        }
+
+        .policy-item-container--policy-no{                                
+            grid-area: policyno;
+            &::before{
+                content:'';
+                background: url(../../assets/img/icon-policy.svg) no-repeat center center;
+                background-size: 100% auto ;
+                display: inline-block;
+                margin-right:5px ;
+                width: 15px;
+                height: 15px;
+                
+            }
+        }
+}

@@ -1,0 +1,31 @@
+@import "../fonts/fonts.scss";
+@import "./utilities/variable.scss";
+
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  margin: 0;
+  font-family: 'triomphelight';
+}
+
+main {
+  display: block;
+}
+
+.form-control::-moz-placeholder{
+  color:$place-holder-color;
+  opacity:1
+}
+
+.form-control:-ms-input-placeholder{
+  color:$place-holder-color
+}
+
+.form-control::-webkit-input-placeholder{
+  color:$place-holder-color
+}
+
